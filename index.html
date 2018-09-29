@@ -1,0 +1,63 @@
+<html>
+
+<head>
+  <title>Visualizing the landscape of neural networks</title>
+  <style>
+    body {
+      margin: 64px;
+      font-family: "Iowan Old Style", "Apple Garamond", Baskerville, "Palatino Linotype", "Times New Roman", "Droid Serif", Times, "Source Serif Pro", serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      width: 600px;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      color: #1b1e23;
+      font-size: 17px;
+      line-height: 1.5;
+      padding: 0 10px;
+    }
+
+    h1 {
+      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+      font-weight: 600;
+      line-height: 1.15;
+      margin-bottom: .25em;
+      margin-top: 0;
+    }
+    #article a {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Visualizing the landscape of neural networks</h1>
+  <div id="article">
+    <p>
+      Training neural networks requires minimizing a <i>loss</i> function.
+      What does this function look like?
+
+      <p>We know it is <i>high-dimensional</i>, most likely <i>non-convex</i>, and
+        visualizing it is non-trivial. Recently, I came across an intriguing paper, <a href="https://arxiv.org/abs/1712.09913">Visualizing
+            the loss landscape of neural nets</a>
+        by Hao Li and others that proposes a simple visualization technique for
+        plotting the loss function. What I like about this technique, without going into much detail, is that it
+        proposes a way to normalize the visualizations across various networks
+        so that they are comparable.
+      </p>
+        <p>With the help of TensorFlow.js, we'll use this
+        technique to explore how initialization, network architecture and hyper
+        parameters affect the loss landscape. All of the simulations run in the browser,
+        and use the MNIST dataset.
+        </p>
+      <div id="fan-in"></div>
+  </div>
+  <script src="https://cdn.plot.ly/plotly-1.41.3.min.js"></script>
+  <!-- <script src="https://unpkg.com/@tensorflow/tfjs-core/dist/tf-core.js"></script> -->
+  <script src="tf-core.js"></script>
+  <script src="data.js"></script>
+  <script src="model.js"></script>
+  <script src="vis.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
